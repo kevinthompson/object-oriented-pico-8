@@ -50,11 +50,11 @@ global=_ENV
 
 class=setmetatable({
 	new=function(_ENV,tbl)
-		tbl=setmetatable(tbl or {},{
+		tbl=tbl or {}
+		
+		setmetatable(tbl or {},{
 			__index=_ENV
 		})
-		
-		tbl:init()
 		
 		return tbl
 	end,
@@ -70,13 +70,9 @@ entity=class:new({
 -- stars
 
 star=entity:new({
-	spd=0.5,
+	spd=.5,
 	rad=0,
 	clr=13,
-	
-	init=function(_ENV,tbl)
-		spd=spd-.25+rnd(.5)
-	end,
 	
 	update=function(_ENV)
 		y+=spd
@@ -93,17 +89,22 @@ star=entity:new({
 })
 
 far_star=star:new({
+	clr=1,
 	spd=.25,
-	clr=1
+	rad=0
 })
 
 near_star=star:new({
-	spd=.75,
 	clr=7,
+	spd=.75,
+	rad=1,
 	
-	init=function(_ENV)
-		star.init(_ENV)
-		rad=rnd({0,1})
+	new=function(self,tbl)
+		tbl=star.new(self,tbl)
+		
+		tbl.spd=tbl.spd+rnd(.5)
+		
+		return tbl
 	end
 })
 __label__
