@@ -52,7 +52,7 @@ class=setmetatable({
 	new=function(_ENV,tbl)
 		tbl=tbl or {}
 		
-		setmetatable(tbl or {},{
+		setmetatable(tbl,{
 			__index=_ENV
 		})
 		
