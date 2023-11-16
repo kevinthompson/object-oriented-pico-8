@@ -23,7 +23,7 @@ In this repo I've included two cartridges:
 <table>
 <tr>
   <td>
-    <a href="https://github.com/kevinthompson/object-oriented-pico-8/blob/main/starfield.p8">starfiled.p8</a>
+    <a href="https://github.com/kevinthompson/object-oriented-pico-8/blob/main/starfield.p8">starfield.p8</a>
   </td>
   <td>This is the cartridge that we build up in the video, creating a field of stars using object oriented programming.</td>
 </tr>
