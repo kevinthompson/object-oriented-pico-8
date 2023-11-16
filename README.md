@@ -7,6 +7,18 @@
 # About
 This is the partner repository to my video on "Object Oriented Programming in PICO-8" which you can [watch on YouTube](https://youtu.be/X9qKODb-wXg). Below you'll find a couple samples from the video with links to additional resources.
 
+Over the course of the video we build up class inheritance logic that ultimately looks something like this (in case you're looking for a quick snippet to get started 😄):
+
+```lua
+class=setmetatable({
+  new=function(_ENV,tbl)
+    return setmetatable(tbl or {},{
+      __index=_ENV
+    })
+  end,
+},{__index=_ENV})
+```
+
 In this repo I've included two cartridges:
 <table>
 <tr>
