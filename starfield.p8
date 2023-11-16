@@ -32,10 +32,6 @@ function _update()
 	for star in all(stars) do
 		star:update()
 	end
-	
-	if btn(❎) then
-		title=0
-	end
 end
 
 function _draw()
@@ -92,7 +88,7 @@ star=entity:new({
 	end,
 	
 	draw=function(_ENV)
-		circfill(x,y,rad,title==1 and 1 or clr)
+		circfill(x,y,rad,clr)
 	end
 })
 
