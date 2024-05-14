@@ -260,6 +260,7 @@ entity=class:extend({
 	
 	extend=function(_ENV,tbl)
 		tbl=class.extend(_ENV,tbl)
+		tbl.pool = {}
 		return tbl
 	end,
 
